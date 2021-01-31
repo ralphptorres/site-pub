@@ -1,0 +1,9 @@
+Hello human,
+
+⑈ ralphptorr.es is a personally developed open source project.
+Content is CC BY-NC-SA 4.0. Source code is MIT.
+This site is developed at https://github.com/ralphptorres/ralphptorr.es/.
+See other related repositories at https://github.com/ralphptorres/.
+
+Regards,
+Ralph Torres
