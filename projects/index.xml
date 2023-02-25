@@ -1,0 +1,35 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects - Ralph Torres</title>
+    <link>https://ralphptorr.es/projects/</link>
+    <description>Recent content in Projects on Ralph Torres</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 Jan 2021 02:17:56 -0800</lastBuildDate>
+    
+        <atom:link href="https://ralphptorr.es/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>See You Again</title>
+      <link>https://ralphptorr.es/projects/see-you-again/</link>
+      <pubDate>Sat, 30 Jan 2021 10:05:09 -0800</pubDate>
+      
+      <guid>https://ralphptorr.es/projects/see-you-again/</guid>
+      <description>Tincidunt praesent semper feugiat nibh. Neque sodales ut etiam sit amet nisl purus. Laoreet suspendisse interdum consectetur libero id faucibus. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar.</description>
+    </item><item>
+      <title>See You</title>
+      <link>https://ralphptorr.es/projects/see-you/</link>
+      <pubDate>Sat, 30 Jan 2021 10:04:18 -0800</pubDate>
+      
+      <guid>https://ralphptorr.es/projects/see-you/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+    </item><item>
+      <title>Yikes</title>
+      <link>https://ralphptorr.es/projects/yikes/</link>
+      <pubDate>Sat, 30 Jan 2021 10:03:22 -0800</pubDate>
+      
+      <guid>https://ralphptorr.es/projects/yikes/</guid>
+      <description>Quis vel eros donec ac odio tempor orci. Dignissim suspendisse in est ante in nibh. Lectus urna duis convallis convallis.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Aether: A Clean Theme for Hugo &middot; Ralph Torres</title>
+  <meta name="description" content="Aether is new theme for Hugo (a static site generator) that emphasizes motion, material, and depth as design elements. Distracting styling and page elements are forgone to focus on the content." />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ralphptorr.es/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ralphptorr.es/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://ralphptorr.es/favicon-16x16.png">
+  <link rel="manifest" href="https://ralphptorr.es/site.webmanifest">
+  <meta property="og:locale" content="en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="⑈ ralphptorr.es">
+<meta property="og:description" content="Physics undergraduate student">
+<meta property="og:url" content="https://ralphptorr.es/posts/aether-theme/">
+<meta property="og:site_name" content="⑈ ralphptorr.es">
+<meta property="og:image" content="https://ralphptorr.es/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="⑈ ralphptorr.es">
+<meta name="twitter:description" content="Physics undergraduate student">
+<meta name="twitter:site" content="https://ralphptorr.es/">
+<meta name="twitter:creator" content="">
+<meta name="twitter:image" content="https://ralphptorr.es/">
+  <link href="https://ralphptorr.es/css/katex.css" rel="stylesheet">
+  
+  
+  
+  
+  <link href="https://ralphptorr.es/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
+
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="https://ralphptorr.es/" class="nav-text">⑈ ralphptorr.es</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="https://ralphptorr.es/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="https://ralphptorr.es/projects/" class="hamburger-menu-overlay-link">Projects</a></li>
+      <li><a href="https://ralphptorr.es/posts/" class="hamburger-menu-overlay-link">Posts</a></li>
+      <li><a href="https://ralphptorr.es/about/" class="hamburger-menu-overlay-link">About</a></li>
+      
+      <li><a href="https://ralphptorr.es/index.xml" class="hamburger-menu-overlay-link">rss</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+          <h1 class="post-title">Aether: A Clean Theme for Hugo</h1>
+          <p class="post-date">Posted <time datetime="2018-05-02">May 2, 2018</time></p>
+        </header>
+        <picture class="post-figure">
+          <source srcset="https://ralphptorr.es/posts/aether-theme/mdd-macbook.webp" type="image/webp">
+          
+          <source srcset="https://ralphptorr.es/posts/aether-theme/mdd-macbook_hu52943d9d8af2e9940e7ffd12ce76fba4_564068_800x0_resize_q75_lanczos.jpg">
+          <img src="https://ralphptorr.es/posts/aether-theme/mdd-macbook_hu52943d9d8af2e9940e7ffd12ce76fba4_564068_800x0_resize_q75_lanczos.jpg" alt="A MacBook showing a website using the aether theme">
+        </picture>
+        
+        <p>Today&rsquo;s web is a frustrating mess of pop-ups, intrusive banners, and ads obstructing the content. I designed aether to be free of all these distractions and simply highlight the content. The result feels more like a native application than a website. Interactions are intuitive, content is the focus, and distractions are omitted.</p>
+<p>Aether is a Hugo theme for blogs that elevates good writing and photography. If you use Hugo for your blog, give aether a try.</p>
+<h2 id="installation">Installation</h2>
+<p>In the root directory of your Hugo Project, clone the aether repo into the themes directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/josephhutch/aether.git themes/aether
+</span></span></code></pre></div><h2 id="usage">Usage</h2>
+<h3 id="website-configuration">Website Configuration</h3>
+<p>Add the following parameters to your config file if they are not present already.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://yourwebsitenamegoeshere.com&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;your language code&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;your website title&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;aether&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;Your google analytics tracking ID&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">brand</span> = <span style="color:#e6db74">&#34;the title displayed in the nav bar - optional&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;your website&#39;s description&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">homeimg</span> = <span style="color:#e6db74">&#34;url to the image used for the home button - optional&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">bgimg</span> = <span style="color:#e6db74">&#34;url to the image used for the background - optional&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rssinmenu</span> = <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">RSS</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">should</span> <span style="color:#a6e22e">appear</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">nav</span> <span style="color:#a6e22e">menu</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#a6e22e">-</span> <span style="color:#a6e22e">optional</span>
+</span></span></code></pre></div><p>The <code>title</code> parameter is used for each page title, the title that seach engines display in search results. If you would like the title shown in the top left of the page to be different from the page title, use the <code>brand</code> parameter. For instance, the title parameter for my site is <code>Joe Hutchinson</code> but the brand parameter is set to <code>joehutch</code>.</p>
+<p>The <code>homeimg</code> and <code>bgimg</code> parameters give you the ability to customize the look of your site further. The homeimg parameter is the image used for the home button at the bottom of every page. Since the text used on the home button is white, a darker background image is preferred. If the homeimg parameter is not specified, a fallback image is used. Similarly, the bgimg parameter is used for the background of each webpage. Aether is designed to look best with a subtle tiling image for the background. If no background image is specified, the background will be a solid gray color.</p>
+<p>That is the only configuration required at the site level! You can now begin writing content for your site.</p>
+<picture>
+    
+    
+    
+        <source srcset="https://ralphptorr.es/posts/aether-theme/mdd-iphone_hu84a3e811f2069d8ee93a6de645aedba9_796307_800x0_resize_q75_lanczos.jpg">
+        <img src="https://ralphptorr.es/posts/aether-theme/mdd-iphone_hu84a3e811f2069d8ee93a6de645aedba9_796307_800x0_resize_q75_lanczos.jpg" alt="aether theme displayed on an iPhone">
+    
+</picture>
+<h3 id="creating-content">Creating content</h3>
+<p>Make a new blog post by executing <code>hugo new posts/postnamehere/index.md</code> in your shell. At the top of the new markdown file, is what&rsquo;s called the front matter. The front matter is the page&rsquo;s metadata that determines how Hugo and aether generate the HTML for your post. Below you can find what the front matter should contain for a new post and what each of the parameters mean.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">---</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;The title of your post&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">date</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">date</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">post</span> <span style="color:#a6e22e">was</span> <span style="color:#a6e22e">generated</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">description</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Description of the post (displayed in the post&#39;s card)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">categories</span><span style="color:#960050;background-color:#1e0010">:</span> [<span style="color:#e6db74">&#34;add comma separated categories here&#34;</span>, <span style="color:#e6db74">&#34;another category&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dropCap</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">first</span> <span style="color:#a6e22e">letter</span> <span style="color:#a6e22e">should</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">large</span> <span style="color:#a6e22e">decorative</span> <span style="color:#a6e22e">capital</span> <span style="color:#a6e22e">letter</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">displayInMenu</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">post</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">listed</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">navigation</span> <span style="color:#a6e22e">menu</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">displayInList</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">post</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">listed</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">home</span> <span style="color:#a6e22e">page</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">category</span> <span style="color:#a6e22e">pages</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">draft</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">page</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">draft</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">resources</span><span style="color:#960050;background-color:#1e0010">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">-</span> <span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">featuredImage</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;URL to the page&#39;s featured image, used as the card image and the image at the top of the article&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">params</span><span style="color:#960050;background-color:#1e0010">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">description</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Description for the featured image, used as the alt text&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">---</span>
+</span></span></code></pre></div><p>The <code>displayInMenu</code> and <code>displayInList</code> parameters are used to determine where your content is displayed. Posts typically have displayInMenu set to false so that the post is not a menu option, and displayInList set to true so it shows up on the homepage&rsquo;s list of posts and in category page lists. An About Me page, on the other hand, would have displayInMenu set to true and displayInList set to false.  That will allow the About Me page to be accessible from the menu but not displayed in the homepage&rsquo;s list of posts.</p>
+<p>The <code>categories</code> parameter is used to group similar posts in category pages. Category pages are accessible from the menu and list all posts with the same category.</p>
+<p>The <code>dropCap</code> parameter is used to determine if the first letter of a post should be a dropped capital. A dropped capital letter is the large decorative letter at the beginning of a book or section.</p>
+<p>Add an interesting description and a good image to each post to get the most value from this theme.</p>
+<p>Aether takes advantage of <a href="https://gohugo.io/content-management/page-bundles/">page bundles</a> to optimize your images for your site.  This may require you to update the way your content is structured, also see <a href="https://gohugo.io/content-management/organization/">content organization</a>.  Use the <code>image</code> and <code>smallimg</code> shortcodes to take full advantage of image optimization.</p>
+<p>Posts are written in markdown and LaTeX (for math symbols and equations). You can find tons of information on how to format your posts with markdown and LaTeX on the web. Below are examples of how markdown and LaTeX looks when generated into HTML with aether. For each example below, first is the markdown and the second is how the resulting HTML looks. This is not an exhaustive list.</p>
+<h4 id="latex-style-math-typesetting-with-katex">LaTeX style math typesetting with KaTeX</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">raw</span> &gt;}}
+</span></span><span style="display:flex;"><span>\[u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{de(t)}{dt} \]
+</span></span><span style="display:flex;"><span>{{&lt; /<span style="color:#f92672">raw</span> &gt;}}
+</span></span></code></pre></div>
+\[u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{de(t)}{dt} \]
+
+<h4 id="code-supports-many-programming-languages-and-formats">Code (Supports many programming languages and formats)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#e6db74">```javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;JavaScript syntax highlighting&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">s</span>);
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;JavaScript syntax highlighting&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">s</span>);
+</span></span></code></pre></div><h4 id="inline-code">Inline code</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>Here is <span style="color:#e6db74">`var s = &#34;Hello World&#34;`</span> inline code
+</span></span></code></pre></div><p>Here is <code>var s = &quot;Hello World&quot;</code> inline code</p>
+<h4 id="tables">Tables</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>| Tables        | Are           | Cool  |
+</span></span><span style="display:flex;"><span>| ------------- |:-------------:| -----:|
+</span></span><span style="display:flex;"><span>| col 3 is      | right-aligned | $1600 |
+</span></span><span style="display:flex;"><span>| col 2 is      | centered      |   $12 |
+</span></span><span style="display:flex;"><span>| zebra stripes | are neat      |    $1 |
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th>Tables</th>
+<th style="text-align:center">Are</th>
+<th style="text-align:right">Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col 3 is</td>
+<td style="text-align:center">right-aligned</td>
+<td style="text-align:right">$1600</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td style="text-align:center">centered</td>
+<td style="text-align:right">$12</td>
+</tr>
+<tr>
+<td>zebra stripes</td>
+<td style="text-align:center">are neat</td>
+<td style="text-align:right">$1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ordered-list">Ordered List</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Number one
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Number Two
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">1.</span> Indented Number 1
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">2.</span> Indented Number 2
+</span></span></code></pre></div><ol>
+<li>Number one</li>
+<li>Number Two
+<ol>
+<li>Indented Number 1</li>
+<li>Indented Number 2</li>
+</ol>
+</li>
+</ol>
+<h4 id="unordered-list">Unordered List</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Get groceries at Harris Teeter before the party
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Get a Spider Man cake
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">*</span> Chocolate or marble
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">*</span> Whipped cream frosting
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Don&#39;t forget to walk the dog before you leave
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Bring lots of plates and silverware so that we don&#39;t run out
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">*</span> Plastic Dixie brand is fine
+</span></span></code></pre></div><ul>
+<li>Get groceries at Harris Teeter before the party</li>
+<li>Get a Spider Man cake
+<ul>
+<li>Chocolate or marble</li>
+<li>Whipped cream frosting</li>
+</ul>
+</li>
+<li>Don&rsquo;t forget to walk the dog before you leave</li>
+<li>Bring lots of plates and silverware so that we don&rsquo;t run out
+<ul>
+<li>Plastic Dixie brand is fine</li>
+</ul>
+</li>
+</ul>
+<h4 id="comments">Comments</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">This is some text that should show up as a comment. Someone may have made this comment but i&#39;m not sure.
+</span></span></span></code></pre></div><blockquote>
+<p>This is some text that should show up as a comment. Someone may have made this comment but i&rsquo;m not sure.</p>
+</blockquote>
+<h4 id="images">Images</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>![<span style="color:#f92672">aether theme displayed on an iPhone</span>](<span style="color:#a6e22e">mdd-iphone.jpg</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--- OR with webp support ... --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">image</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mdd-iphone.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;aether theme displayed on an iPhone&#34;</span> &gt;}}
+</span></span></code></pre></div><picture>
+    
+    
+    
+        <source srcset="https://ralphptorr.es/posts/aether-theme/mdd-iphone_hu84a3e811f2069d8ee93a6de645aedba9_796307_800x0_resize_q75_lanczos.jpg">
+        <img src="https://ralphptorr.es/posts/aether-theme/mdd-iphone_hu84a3e811f2069d8ee93a6de645aedba9_796307_800x0_resize_q75_lanczos.jpg" alt="aether theme displayed on an iPhone">
+    
+</picture>
+<h4 id="small-images">Small Images</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">smallimg</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mdd-iphone.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;aether theme displayed on an iPhone&#34;</span> <span style="color:#a6e22e">smartfloat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;250px&#34;</span> &gt;}}
+</span></span></code></pre></div><picture class="small-pic ">
+    
+    
+    
+        
+        
+        <source srcset="https://ralphptorr.es/posts/aether-theme/mdd-iphone_hu84a3e811f2069d8ee93a6de645aedba9_796307_250x0_resize_q75_lanczos.jpg">
+        <img src="https://ralphptorr.es/posts/aether-theme/mdd-iphone_hu84a3e811f2069d8ee93a6de645aedba9_796307_250x0_resize_q75_lanczos.jpg" class="small-img smartfloat-left" alt="aether theme displayed on an iPhone"  style="width: 250px;"/>
+    
+</picture>
+<p>This image floats to the left of this paragraph and is 250px wide. Its aspect ratio is maintained so it will not stretch. The picture shows aether on an iPhone. You can see how the design is responsive and how the cards intelligently fit to the display. With flexbox and css grid, heavy frameworks such as bootstrap aren&rsquo;t necessary to create beautiful responsive designs. The cards in aether use flexbox to change the image from the right side on desktops to the top on mobile.</p>
+<h4 id="links">Links</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>[<span style="color:#f92672">Aether&#39;s Github page</span>](<span style="color:#a6e22e">https://github.com/josephhutch/aether</span>)
+</span></span></code></pre></div><p><a href="https://github.com/josephhutch/aether">Aether&rsquo;s Github page</a></p>
+<h3 id="further-customization">Further Customization</h3>
+<p>To change the heading and subtext at the top of list pages just add a _index.md file in the folder that the list page is generated from. For example to change the heading at the top of the homepage, add an _index.md file to the content folder with the following parameters.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">---</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;This is the main heading text in big letters&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">date</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">date</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">description</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;This is the subtext above the main heading in small letters&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">---</span>
+</span></span></code></pre></div><h2 id="learn--more">Learn  More</h2>
+<p>To learn more about aether, visit <a href="https://github.com/josephhutch/aether">aether&rsquo;s Github page</a>. To learn more about Hugo, visit <a href="https://gohugo.io/">Hugo&rsquo;s website</a>.</p>
+
+      </article>
+      
+    </main>
+    <nav class="end-nav side-padding">
+      
+    </nav>
+    <footer class="side-padding">
+  <span class="footer-link">
+    © 2023 <a href="https://ralphptorr.es/">⑈ Ralph Torres</a>.
+    <a href="https://github.com/ralphptorres/ralphptorr.es/">Source code</a> is <a href="https://choosealicense.com/licenses/mit/">MIT-licensed</a>. 
+    Content is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  </span>
+</footer>
+    
+  <script defer src="https://ralphptorr.es/js/katex.js"></script>
+
+
+  <script defer src="https://ralphptorr.es/js/auto-render.js" onload="renderMathInElement(document.body);"></script>
+
+
+<script src="https://ralphptorr.es/js/core.min.js"></script>
+
+  </body>
+</html>

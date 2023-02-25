@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Procedurally Generated Maze Game Fun &middot; Ralph Torres</title>
+  <meta name="description" content="Everyone loves a good maze but, how might a computer generate one. Well, you can generate a maze using a simple algorithm called recursive backtracking. And yes, the algorithm is as cool as its name." />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ralphptorr.es/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ralphptorr.es/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://ralphptorr.es/favicon-16x16.png">
+  <link rel="manifest" href="https://ralphptorr.es/site.webmanifest">
+  <meta property="og:locale" content="en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="⑈ ralphptorr.es">
+<meta property="og:description" content="Physics undergraduate student">
+<meta property="og:url" content="https://ralphptorr.es/posts/labyrinth/">
+<meta property="og:site_name" content="⑈ ralphptorr.es">
+<meta property="og:image" content="https://ralphptorr.es/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="⑈ ralphptorr.es">
+<meta name="twitter:description" content="Physics undergraduate student">
+<meta name="twitter:site" content="https://ralphptorr.es/">
+<meta name="twitter:creator" content="">
+<meta name="twitter:image" content="https://ralphptorr.es/">
+  <link href="https://ralphptorr.es/css/katex.css" rel="stylesheet">
+  
+  
+  
+  
+  <link href="https://ralphptorr.es/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
+
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="https://ralphptorr.es/" class="nav-text">⑈ ralphptorr.es</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="https://ralphptorr.es/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="https://ralphptorr.es/projects/" class="hamburger-menu-overlay-link">Projects</a></li>
+      <li><a href="https://ralphptorr.es/posts/" class="hamburger-menu-overlay-link">Posts</a></li>
+      <li><a href="https://ralphptorr.es/about/" class="hamburger-menu-overlay-link">About</a></li>
+      
+      <li><a href="https://ralphptorr.es/index.xml" class="hamburger-menu-overlay-link">rss</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+          <h1 class="post-title">Procedurally Generated Maze Game Fun</h1>
+          <p class="post-date">Posted <time datetime="2019-03-15">Mar 15, 2019</time></p>
+        </header>
+        <picture class="post-figure">
+          
+          
+          <source srcset="https://ralphptorr.es/posts/labyrinth/labyrinthMaze_hu656cf53a99aa63dd93becea4962639b7_36301_800x0_resize_lanczos_3.png">
+          <img src="https://ralphptorr.es/posts/labyrinth/labyrinthMaze_hu656cf53a99aa63dd93becea4962639b7_36301_800x0_resize_lanczos_3.png" alt="The maze game window with the solution to the maze painted over it">
+        </picture>
+        
+        <p>Back in high school, I made a maze game for a local programming competition. The mazes are generated procedurally, it keeps score, and it can generate mazes of different sizes. Had my high school self thought to document and package the game sooner than a half hour before the deadline, I think it would have done well in the competition. Anyways, the maze game runs anywhere with Java and is built with a number of cool algorithms.</p>
+<h2 id="procedural-maze-generation">Procedural Maze Generation</h2>
+<p>Each maze is procedurally generated using an algorithm called recursive backtracking. It is one of the more simple maze generation algorithms but it produces great results. The algorithm can be broken down into three basic steps:</p>
+<ol>
+<li>Pick a starting point and begin a random walk, keeping track of where you have been</li>
+<li>Once you hit a dead end, backtrack until there is room to begin your random walk again</li>
+<li>Repeat until there is nowhere left to walk and you have backtracked to the origin</li>
+</ol>
+<h2 id="verifying-that-the-maze-is-solvable">Verifying That the Maze Is Solvable</h2>
+<p>Recursive backtracking provides no guarantee that the maze is solvable. So, before the game lets the user attempt an impossible maze, it verifies that the maze has a solution using an efficient path finding algorithm called A* (pronounced &ldquo;A Star&rdquo;).</p>
+<picture>
+    
+    
+    
+        <source srcset="https://ralphptorr.es/posts/labyrinth/labyrinth_hu5ff8e42bea182877c46b2e332fd6a547_381419_800x0_resize_lanczos_3.png">
+        <img src="https://ralphptorr.es/posts/labyrinth/labyrinth_hu5ff8e42bea182877c46b2e332fd6a547_381419_800x0_resize_lanczos_3.png" alt="Labyrinth maze game window">
+    
+</picture>
+
+      </article>
+      
+    </main>
+    <nav class="end-nav side-padding">
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="https://ralphptorr.es/posts/line-following-robot/" class="card blog-card bc-next" rel="bookmark" >
+  
+  <div class="card-img-container">
+    <p class="card-img-overlay">Next Article</p>
+    <picture>
+      
+      <source srcset="https://ralphptorr.es/posts/line-following-robot/lineBot.jpg">
+      <img src="https://ralphptorr.es/posts/line-following-robot/lineBot.jpg" class="card-img" alt="A line following robot comprised of a Lego EV3 and hand-soldered sensor circuits">
+    </picture>
+  </div>
+  
+  <article class="card-body">
+    <h2 class="card-title">PID Control for Line Following Robot</h2>
+    <p class="card-text">Line following is easy to accomplish but hard to master. PID Control, while more challenging to implement and tune, provides effective smooth tracking and quick response.</p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2018-12-21 1221:00">Dec 21, 2018</time></p>
+      <p>#tech </p>
+    </div>
+  </article>
+</a>
+      
+    </nav>
+    <footer class="side-padding">
+  <span class="footer-link">
+    © 2023 <a href="https://ralphptorr.es/">⑈ Ralph Torres</a>.
+    <a href="https://github.com/ralphptorres/ralphptorr.es/">Source code</a> is <a href="https://choosealicense.com/licenses/mit/">MIT-licensed</a>. 
+    Content is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  </span>
+</footer>
+    
+  <script defer src="https://ralphptorr.es/js/katex.js"></script>
+
+
+  <script defer src="https://ralphptorr.es/js/auto-render.js" onload="renderMathInElement(document.body);"></script>
+
+
+<script src="https://ralphptorr.es/js/core.min.js"></script>
+
+  </body>
+</html>

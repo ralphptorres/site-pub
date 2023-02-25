@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>How to Add Scrollbars to a Dynamic GUI in TKinter &middot; Ralph Torres</title>
+  <meta name="description" content="When dynamically adding a widget to a GUI, you expect any scrollbars to adapt to the new size of the content area (allowing the user to scroll to the new content).  Unfortunately when developing these dynamic GUIs with Tkinter, it is not straightforward to get this behavior.  This post will show you how to get your scrollbars working so you can move on to the fun stuff." />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ralphptorr.es/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ralphptorr.es/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://ralphptorr.es/favicon-16x16.png">
+  <link rel="manifest" href="https://ralphptorr.es/site.webmanifest">
+  <meta property="og:locale" content="en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="⑈ ralphptorr.es">
+<meta property="og:description" content="Physics undergraduate student">
+<meta property="og:url" content="https://ralphptorr.es/posts/tkinter-dynamic-scroll-area/">
+<meta property="og:site_name" content="⑈ ralphptorr.es">
+<meta property="og:image" content="https://ralphptorr.es/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="⑈ ralphptorr.es">
+<meta name="twitter:description" content="Physics undergraduate student">
+<meta name="twitter:site" content="https://ralphptorr.es/">
+<meta name="twitter:creator" content="">
+<meta name="twitter:image" content="https://ralphptorr.es/">
+  <link href="https://ralphptorr.es/css/katex.css" rel="stylesheet">
+  
+  
+  
+  
+  <link href="https://ralphptorr.es/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
+
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="https://ralphptorr.es/" class="nav-text">⑈ ralphptorr.es</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="https://ralphptorr.es/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="https://ralphptorr.es/projects/" class="hamburger-menu-overlay-link">Projects</a></li>
+      <li><a href="https://ralphptorr.es/posts/" class="hamburger-menu-overlay-link">Posts</a></li>
+      <li><a href="https://ralphptorr.es/about/" class="hamburger-menu-overlay-link">About</a></li>
+      
+      <li><a href="https://ralphptorr.es/index.xml" class="hamburger-menu-overlay-link">rss</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+          <h1 class="post-title">How to Add Scrollbars to a Dynamic GUI in TKinter</h1>
+          <p class="post-date">Posted <time datetime="2020-07-28">Jul 28, 2020</time></p>
+        </header>
+        
+        
+        <p>The scrollbars in Tkinter kind of suck..  Imagine a todo app that lists the todo items along with corresponding checkboxes in a vertical list.  When the list gets long, it might extend beyond the bottom of the window.  A scrollbar can solve that no problem, BUT, with Tkinter the scrollbars do not automatically include the new todo items in the scrollable area.  So all those super important action items are now out of reach!  Unfortunately, it&rsquo;s not straight forward to fix this issue with Tkinter and there are no examples online of how to get both vertical and horizontal scrolling working for a dynamic app.  It took me a few hours, but I developed a robust solution that will get your Tkinter todo list app, chess app, or whatever-else-your-heart-desires app scrolling properly in no time.</p>
+<p>First create the window, containers for content, and scrollbars.  The only native scrollable container in Tkinter is a canvas, so add that to the window with a frame inside.  The frame is where widgets will go since widgets can&rsquo;t be added directly to a canvas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>root <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>Tk()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cTableContainer <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>Canvas(root)
+</span></span><span style="display:flex;"><span>fTable <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>Frame(cTableContainer)
+</span></span><span style="display:flex;"><span>sbHorizontalScrollBar <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>Scrollbar(root)
+</span></span><span style="display:flex;"><span>sbVerticalScrollBar <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>Scrollbar(root)
+</span></span></code></pre></div><p>Now that we have the window setup, let&rsquo;s configure the scrollbars.  Attach the horizontal and vertical scrollbars to the canvas and position them at the bottom and right side of the screen where they belong.  Then bind the scroll events the the proper container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cTableContainer<span style="color:#f92672">.</span>config(xscrollcommand<span style="color:#f92672">=</span>sbHorizontalScrollBar<span style="color:#f92672">.</span>set,
+</span></span><span style="display:flex;"><span>        yscrollcommand<span style="color:#f92672">=</span>sbVerticalScrollBar<span style="color:#f92672">.</span>set, highlightthickness<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>sbHorizontalScrollBar<span style="color:#f92672">.</span>config(orient<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>HORIZONTAL, command<span style="color:#f92672">=</span>cTableContainer<span style="color:#f92672">.</span>xview)
+</span></span><span style="display:flex;"><span>sbVerticalScrollBar<span style="color:#f92672">.</span>config(orient<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>VERTICAL, command<span style="color:#f92672">=</span>cTableContainer<span style="color:#f92672">.</span>yview)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sbHorizontalScrollBar<span style="color:#f92672">.</span>pack(fill<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>X, side<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>BOTTOM, expand<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>FALSE)
+</span></span><span style="display:flex;"><span>sbVerticalScrollBar<span style="color:#f92672">.</span>pack(fill<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>Y, side<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>RIGHT, expand<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>FALSE)
+</span></span><span style="display:flex;"><span>cTableContainer<span style="color:#f92672">.</span>pack(fill<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>BOTH, side<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>LEFT, expand<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>TRUE)
+</span></span><span style="display:flex;"><span>cTableContainer<span style="color:#f92672">.</span>create_window(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, window<span style="color:#f92672">=</span>fTable, anchor<span style="color:#f92672">=</span>tk<span style="color:#f92672">.</span>NW)
+</span></span></code></pre></div><p>Finally, here is the magic function that updates the scrollable area.  Just call it when you add a new widget to the frame.  This took me well over any hour of reading the docs and forums to come up with.  I&rsquo;ll spare you the misery.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">updateScrollRegion</span>():
+</span></span><span style="display:flex;"><span>	cTableContainer<span style="color:#f92672">.</span>update_idletasks()
+</span></span><span style="display:flex;"><span>	cTableContainer<span style="color:#f92672">.</span>config(scrollregion<span style="color:#f92672">=</span>fTable<span style="color:#f92672">.</span>bbox())
+</span></span></code></pre></div><p>Those are the building blocks you need to get your scrollbars working in a GUI with dynamically added widgets.  The gist below puts all the pieces together in an example app that shows both scrollbars updating the scrollable area while &ldquo;hello world&rdquo; labels are added across the screen.  Try it out yourself!</p>
+<script type="application/javascript" src="https://gist.github.com/josephhutch/5fafbbe66db2e695a246fa99306b0420.js"></script>
+
+<p>When you run the gist, you will see a window that looks like the one below with a new label being added every second.  The scrollbars will adjust when the new label is added so that you can scroll to them.</p>
+<p><img src="tkinter_scroll_example_app.png" alt="Tkinter dynamic scroll example app"></p>
+<p>If you found <a href="https://gist.github.com/josephhutch/5fafbbe66db2e695a246fa99306b0420">the above gist</a> helpful, give it a star so other developers in a scrolling crisis can find it :)</p>
+
+      </article>
+      
+    </main>
+    <nav class="end-nav side-padding">
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="https://ralphptorr.es/posts/starting-ee/" class="card blog-card bc-next" rel="bookmark" >
+  
+  <div class="card-img-container">
+    <p class="card-img-overlay">Next Article</p>
+    <picture>
+      
+      <source srcset="https://ralphptorr.es/posts/starting-ee/eeLabEquipment.jpg">
+      <img src="https://ralphptorr.es/posts/starting-ee/eeLabEquipment.jpg" class="card-img" alt="EE lab equipment spread across a desk">
+    </picture>
+  </div>
+  
+  <article class="card-body">
+    <h2 class="card-title">A Letter to Those Starting Electrical Engineering</h2>
+    <p class="card-text">Electrical Engineering is an exciting, rewarding career choice.  For those who enjoy physics and logic it is a perfect fit.  Here is the advice I wish I knew when starting my EE journey.</p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2020-01-16 116:00">Jan 16, 2020</time></p>
+      <p>#tech </p>
+    </div>
+  </article>
+</a>
+      
+    </nav>
+    <footer class="side-padding">
+  <span class="footer-link">
+    © 2023 <a href="https://ralphptorr.es/">⑈ Ralph Torres</a>.
+    <a href="https://github.com/ralphptorres/ralphptorr.es/">Source code</a> is <a href="https://choosealicense.com/licenses/mit/">MIT-licensed</a>. 
+    Content is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  </span>
+</footer>
+    
+  <script defer src="https://ralphptorr.es/js/katex.js"></script>
+
+
+  <script defer src="https://ralphptorr.es/js/auto-render.js" onload="renderMathInElement(document.body);"></script>
+
+
+<script src="https://ralphptorr.es/js/core.min.js"></script>
+
+  </body>
+</html>
